@@ -1,9 +1,9 @@
 import React from 'react';
-import { Monitor, Mic, Settings, MessageSquare, Clock, Upload, FileText, User } from 'lucide-react';
+import { Monitor, Mic, Settings, MessageSquare, Clock, User } from 'lucide-react';
 
 export const LiveInterview: React.FC = () => {
   return (
-    <div className="grid grid-cols-1 xl:grid-cols-4 gap-8">
+    <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
       {/* Left Column - Screen Share */}
       <div className="xl:col-span-2 space-y-8">
         <div className="bg-white dark:bg-black rounded-xl shadow-lg border border-gray-200 dark:border-gray-800">
@@ -108,54 +108,6 @@ export const LiveInterview: React.FC = () => {
         </div>
       </div>
 
-      {/* Right Column - Documents & Context */}
-      <div className="xl:col-span-1 space-y-8">
-        <div className="bg-white dark:bg-black rounded-xl shadow-lg border border-gray-200 dark:border-gray-800">
-          <div className="p-6 border-b border-gray-200 dark:border-gray-800">
-            <div className="flex items-center space-x-3">
-              <FileText className="w-5 h-5 text-orange-600" />
-              <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
-                Documents
-              </h2>
-            </div>
-          </div>
-          <div className="p-6">
-            <div className="border-2 border-dashed border-gray-300 dark:border-gray-700 rounded-lg p-6 text-center mb-6">
-              <Upload className="w-8 h-8 text-gray-400 mx-auto mb-2" />
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
-                Upload resume or documents
-              </p>
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
-                Choose Files
-              </button>
-            </div>
-
-            <div className="space-y-3">
-              <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg flex items-center space-x-3">
-                <FileText className="w-5 h-5 text-blue-600" />
-                <div className="flex-1">
-                  <p className="text-sm font-medium text-gray-900 dark:text-white">
-                    John_Doe_Resume.pdf
-                  </p>
-                  <p className="text-xs text-gray-500">Added 2 mins ago</p>
-                </div>
-                <button className="text-red-600 hover:text-red-700 text-xs">Remove</button>
-              </div>
-              
-              <div className="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg flex items-center space-x-3">
-                <FileText className="w-5 h-5 text-green-600" />
-                <div className="flex-1">
-                  <p className="text-sm font-medium text-gray-900 dark:text-white">
-                    Job_Description.pdf
-                  </p>
-                  <p className="text-xs text-gray-500">Added 5 mins ago</p>
-                </div>
-                <button className="text-red-600 hover:text-red-700 text-xs">Remove</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* AI Insights */}
         <div className="bg-white dark:bg-black rounded-xl shadow-lg border border-gray-200 dark:border-gray-800">
           <div className="p-6 border-b border-gray-200 dark:border-gray-800">
@@ -226,7 +178,6 @@ export const LiveInterview: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
     </div>
   );
 };
