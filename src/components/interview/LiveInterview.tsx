@@ -1,5 +1,5 @@
 import React from 'react';
-import { Monitor, Mic, Settings, Clock, User } from 'lucide-react';
+import { Monitor, Mic, Settings, Clock, User, MessageSquare } from 'lucide-react';
 
 export const LiveInterview: React.FC = () => {
   return (
