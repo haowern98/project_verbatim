@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Sun, Moon, Monitor } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 
@@ -9,9 +9,22 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ activeMode, onModeChange }) => {
   const { isDark, toggleTheme } = useTheme();
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsScrolled(scrollPosition > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/80 dark:bg-black/80 border-b border-gray-200/60 dark:border-white/10 backdrop-blur">
+    <header className={`sticky top-0 z-50 bg-white/80 dark:bg-black/80 border-b border-gray-200/60 dark:border-white/10 backdrop-blur transition-all duration-300 ${
+      isScrolled ? 'pt-0' : 'pt-3'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-8">
