@@ -1,5 +1,5 @@
 import React from 'react';
-import { Monitor, Mic, Settings, MessageSquare, Clock, User } from 'lucide-react';
+import { Monitor, Mic, Settings, Clock, User } from 'lucide-react';
 
 export const LiveInterview: React.FC = () => {
   return (
@@ -108,46 +108,6 @@ export const LiveInterview: React.FC = () => {
         </div>
       </div>
 
-        {/* AI Insights */}
-        <div className="bg-white dark:bg-black rounded-xl shadow-lg border border-gray-200 dark:border-gray-800">
-          <div className="p-6 border-b border-gray-200 dark:border-gray-800">
-            <div className="flex items-center space-x-3">
-              <MessageSquare className="w-5 h-5 text-purple-600" />
-              <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
-                AI Insights
-              </h2>
-            </div>
-          </div>
-          <div className="p-6 space-y-4">
-            <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500">
-              <h4 className="text-sm font-medium text-blue-700 dark:text-blue-300 mb-2">
-                Skills Match
-              </h4>
-              <p className="text-sm text-gray-700 dark:text-gray-300">
-                85% match with required React skills from job description
-              </p>
-            </div>
-            
-            <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg border-l-4 border-green-500">
-              <h4 className="text-sm font-medium text-green-700 dark:text-green-300 mb-2">
-                Communication
-              </h4>
-              <p className="text-sm text-gray-700 dark:text-gray-300">
-                Clear articulation and structured responses
-              </p>
-            </div>
-            
-            <div className="bg-yellow-50 dark:bg-yellow-900/20 p-4 rounded-lg border-l-4 border-yellow-500">
-              <h4 className="text-sm font-medium text-yellow-700 dark:text-yellow-300 mb-2">
-                Suggested Questions
-              </h4>
-              <p className="text-sm text-gray-700 dark:text-gray-300">
-                Ask about specific React performance optimization techniques
-              </p>
-            </div>
-          </div>
-        </div>
-
         {/* Session Status */}
         <div className="bg-white dark:bg-black rounded-xl shadow-lg border border-gray-200 dark:border-gray-800">
           <div className="p-6 border-b border-gray-200 dark:border-gray-800">
@@ -160,21 +120,25 @@ export const LiveInterview: React.FC = () => {
           </div>
           <div className="p-6 space-y-4">
             <div className="flex items-center justify-between">
-              <span className="text-gray-600 dark:text-gray-400">Recording</span>
+              <span className="text-gray-600 dark:text-gray-400">Screen Capture</span>
+              <span className="bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-medium flex items-center gap-2">
+                <Monitor className="w-3 h-3" />
+                Inactive
+              </span>
+            </div>
+            <div className="flex items-center justify-between">
+              <span className="text-gray-600 dark:text-gray-400">Audio Capture</span>
+              <span className="bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-medium flex items-center gap-2">
+                <Mic className="w-3 h-3" />
+                Inactive
+              </span>
+            </div>
+            <div className="flex items-center justify-between">
+              <span className="text-gray-600 dark:text-gray-400">Session Time</span>
               <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span className="bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 px-2 py-1 rounded text-xs">
-                  Active
-                </span>
+                <Clock className="w-4 h-4 text-gray-400" />
+                <span className="text-gray-900 dark:text-white font-mono">00:00:00</span>
               </div>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="text-gray-600 dark:text-gray-400">Duration</span>
-              <span className="text-gray-900 dark:text-white font-mono">00:15:23</span>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="text-gray-600 dark:text-gray-400">Participants</span>
-              <span className="text-gray-900 dark:text-white">2</span>
             </div>
           </div>
         </div>
